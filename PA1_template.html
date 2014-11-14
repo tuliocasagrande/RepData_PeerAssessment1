@@ -309,6 +309,8 @@ sum(is.na(original_data$steps))
 <li>Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.</li>
 </ul>
 
+<p>The strategy is to replace missing values by the mean for that 5-minute interval:</p>
+
 <pre><code class="r">imput_mean_steps &lt;- function(interval) {
   return(average_steps_per_interval[average_steps_per_interval$interval == interval, &quot;steps&quot;])
 }
